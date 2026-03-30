@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    --background: 0.1 0.02 280;
+    --foreground: 0.97 0.01 280;
+    --card: 0.15 0.03 280;
+    --card-foreground: 0.97 0.01 280;
+    --popover: 0.13 0.025 280;
+    --popover-foreground: 0.97 0.01 280;
+    --primary: 0.58 0.22 280;
+    --primary-foreground: 0.98 0.005 280;
+    --secondary: 0.2 0.04 280;
+    --secondary-foreground: 0.97 0.01 280;
+    --muted: 0.18 0.03 280;
+    --muted-foreground: 0.72 0.05 280;
+    --accent: 0.5 0.25 295;
+    --accent-foreground: 0.98 0.005 280;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.3 0.05 280;
+    --input: 0.25 0.04 280;
+    --ring: 0.58 0.22 280;
+    --chart-1: 0.58 0.22 280;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.12 0.025 280;
+    --sidebar-foreground: 0.97 0.01 280;
+    --sidebar-primary: 0.58 0.22 280;
+    --sidebar-primary-foreground: 0.98 0.005 280;
+    --sidebar-accent: 0.2 0.04 280;
+    --sidebar-accent-foreground: 0.97 0.01 280;
+    --sidebar-border: 0.3 0.05 280;
+    --sidebar-ring: 0.58 0.22 280;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    background: linear-gradient(135deg, #0b0b18 0%, #14142a 50%, #0f0f22 100%);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(40, 40, 70, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(109, 91, 255, 0.25);
+  }
+
+  .glass-nav {
+    background: rgba(23, 23, 47, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(109, 91, 255, 0.15);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #6d5bff, #8b5cf6, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-btn {
+    background: linear-gradient(135deg, #6d5bff, #8b5cf6);
+    transition: all 0.3s ease;
+  }
+
+  .gradient-btn:hover {
+    background: linear-gradient(135deg, #5a4ae0, #7c3aed);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(109, 91, 255, 0.45);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 30px rgba(109, 91, 255, 0.3), 0 0 60px
+      rgba(109, 91, 255, 0.1);
+  }
+
+  .progress-bar-fill {
+    background: linear-gradient(90deg, #4a78ff, #6d5bff);
+    transition: width 0.3s ease;
+  }
+
+  .file-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .drop-zone-active {
+    border-color: rgba(109, 91, 255, 0.8) !important;
+    background: rgba(109, 91, 255, 0.1) !important;
+  }
+}
